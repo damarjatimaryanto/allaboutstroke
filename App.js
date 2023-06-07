@@ -24,24 +24,26 @@ import WelcomeScreen from './pages/WelcomeScreen';
 import NakesScreen from './pages/NakesScreen';
 import PanduanKlaim from './pages/pagesdetail/PanduanKlaim';
 import PasienScreen from './pages/PasienScreen';
+import Definisi from './pages/nakes/Definisi';
+import Kembali from './pages/Kembali';
 
 const Tab = createBottomTabNavigator();
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
 const COLORS = {
-  primary: '#00AAFF',
+  primary: '#125873',
   white: '#FFFFFF',
-  orange: '#FFBC14',
-  abuabu: '#9098B1',
+  white_bg: '#F8F8F8',
+
   abusoft: '#EBF0FF',
   black: '#151515',
   black_soft: '#202020',
-  green: '#3AF891',
+  coklat: '#1E1E1E',
   grey_soft: '#C9C9C9',
-  black_transparent: '#292E32',
   font_color: '#E3E3E3',
-  grey_1: '#878787',
-  transparent: '#4A46464C',
+  grey_1: '#484848',
+  blue_bg: '#E8EFF1',
+  shadow: '#1b2e5e',
 };
 
 function BackNakes() {
@@ -56,14 +58,14 @@ function BackNakes() {
       onPress={() => navigation.navigate('NakesScreen')}
       style={{
         marginLeft: 24,
-        backgroundColor: '#E8EFF1',
+        backgroundColor: COLORS.primary,
         padding: 8,
         borderRadius: 40,
         opacity: 0.7,
         marginVertical: 2,
       }}>
       <Image
-        style={{height: 24, width: 24}}
+        style={{height: 24, width: 24, tintColor: 'white'}}
         source={require('./assets/img/icons/arrow-left.png')}
       />
     </TouchableOpacity>
@@ -103,7 +105,7 @@ function App() {
         screenOptions={{
           headerTitleStyle: {
             fontSize: 20,
-            // fontFamily: 'Lato-Bold',
+            fontFamily: 'Inter-SemiBold',
             color: '#125873',
           },
           headerStyle: {
@@ -150,7 +152,7 @@ function App() {
           name="NakesScreen"
           component={NakesScreen}
           options={{
-            title: 'Nakes',
+            title: 'Edukasi Stroke Nakes',
             headerShown: true,
             headerStyle: {
               height: 120,
@@ -164,7 +166,11 @@ function App() {
           name="PasienScreen"
           component={PasienScreen}
           options={{
-            title: 'Pasien',
+            title: 'Edukasi Stroke Pasien',
+            headerTitleStyle: {
+              fontFamily: 'Inter-Bold',
+              color: COLORS.primary,
+            },
             headerShown: true,
             headerStyle: {
               height: 120,
@@ -182,6 +188,36 @@ function App() {
             headerShown: false,
             headerStyle: {
               backgroundColor: 'white',
+            },
+            tabBarStyle: {display: 'none'},
+            tabBarButton: () => null,
+            headerLeft: () => <BackNakes />,
+          }}
+        />
+        <Tab.Screen
+          name="Definisi"
+          component={Definisi}
+          options={{
+            title: 'Kembali',
+            headerShown: false,
+            headerStyle: {
+              backgroundColor: 'white',
+              height: 120,
+            },
+            tabBarStyle: {display: 'none'},
+            tabBarButton: () => null,
+            headerLeft: () => <BackNakes />,
+          }}
+        />
+        <Tab.Screen
+          name="Kembali"
+          component={Kembali}
+          options={{
+            title: 'Kembali',
+            headerShown: false,
+            headerStyle: {
+              backgroundColor: 'white',
+              height: 120,
             },
             tabBarStyle: {display: 'none'},
             tabBarButton: () => null,

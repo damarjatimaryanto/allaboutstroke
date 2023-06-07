@@ -141,6 +141,7 @@ const WelcomeScreen = () => {
             justifyContent: 'space-between',
           }}>
           <TouchableOpacity
+            onPress={() => navigation.navigate('NakesScreen')}
             style={{
               backgroundColor: COLORS.white,
               width: responsiveScreenWidth(43),
@@ -179,6 +180,7 @@ const WelcomeScreen = () => {
           </TouchableOpacity>
 
           <TouchableOpacity
+            onPress={() => navigation.navigate('PasienScreen')}
             style={{
               backgroundColor: COLORS.white,
               width: responsiveScreenWidth(43),

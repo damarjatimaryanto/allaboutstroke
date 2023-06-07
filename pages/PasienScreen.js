@@ -26,76 +26,113 @@ import {
 
 const WIDTH = Dimensions.get('screen').width;
 const HEIGHT = Dimensions.get('screen').height;
+const COLORS = {
+  primary: '#125873',
+  white: '#FFFFFF',
+  white_bg: '#F8F8F8',
+
+  abusoft: '#EBF0FF',
+  black: '#151515',
+  black_soft: '#202020',
+  coklat: '#1E1E1E',
+  grey_soft: '#C9C9C9',
+  font_color: '#E3E3E3',
+  grey_1: '#484848',
+  blue_bg: '#E8EFF1',
+  shadow: '#1b2e5e',
+};
 const PasienScreen = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'dark-content'} backgroundColor="transparent" />
-      <ScrollView style={styles.scroll_container}>
-        <TouchableOpacity
-          style={styles.menu_style}
-          onPress={() => navigation.navigate('PanduanKlaim')}>
-          <View style={styles.menu_img_container}></View>
-          <View style={styles.title_container}>
-            <Text style={styles.title_style}>Panduan Klaim INA-CBG</Text>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={styles.scroll_container}>
+        <View style={styles.menu_style}>
+          <View style={{width: '30%', height: '100%'}}>
+            <Image
+              style={{height: 100, width: 80}}
+              source={require('../assets/img/icons/icon_pasien2.png')}
+            />
           </View>
-        </TouchableOpacity>
+          <View
+            style={{
+              justifyContent: 'center',
+              // alignItems: 'center',
+              // backgroundColor: 'yellow',
+              width: '70%',
+              height: '100%',
+              paddingHorizontal: 10,
+            }}>
+            <Text
+              style={{
+                fontFamily: 'Inter-Bold',
+                color: COLORS.primary,
+                fontSize: 20,
+              }}>
+              Pasien
+            </Text>
+            <Text style={{fontFamily: 'Inter-Regular', color: COLORS.coklat}}>
+              Edukasi mengenai stroke bagi pasien
+            </Text>
+          </View>
+        </View>
 
-        <TouchableOpacity style={styles.menu_style}>
-          <View style={styles.menu_img_container}></View>
-          <View style={styles.title_container}>
-            <Text style={styles.title_style}>Panduan Klaim INA-CBG</Text>
-          </View>
-        </TouchableOpacity>
+        {/* // !Tampilan Menu */}
 
-        <TouchableOpacity style={styles.menu_style}>
-          <View style={styles.menu_img_container}></View>
-          <View style={styles.title_container}>
-            <Text style={styles.title_style}>Panduan Klaim INA-CBG</Text>
-          </View>
-        </TouchableOpacity>
+        <View>
+          <Text style={{fontFamily: 'Inter', color: COLORS.coklat}}>
+            Pilih Materi Edukasi:
+          </Text>
+        </View>
 
-        <TouchableOpacity style={styles.menu_style}>
-          <View style={styles.menu_img_container}></View>
-          <View style={styles.title_container}>
-            <Text style={styles.title_style}>Panduan Klaim INA-CBG</Text>
-          </View>
-        </TouchableOpacity>
+        <View style={styles.menu_container}>
+          {/* // Menu Box */}
+          <TouchableOpacity style={styles.box_menu_container}>
+            <Text style={styles.text_menu_style}>Definisi</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity style={styles.menu_style}>
-          <View style={styles.menu_img_container}></View>
-          <View style={styles.title_container}>
-            <Text style={styles.title_style}>Panduan Klaim INA-CBG</Text>
-          </View>
-        </TouchableOpacity>
+          {/* // Menu Box */}
+          <TouchableOpacity style={styles.box_menu_container}>
+            <Text style={styles.text_menu_style}>Gejala</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity style={styles.menu_style}>
-          <View style={styles.menu_img_container}></View>
-          <View style={styles.title_container}>
-            <Text style={styles.title_style}>Panduan Klaim INA-CBG</Text>
-          </View>
-        </TouchableOpacity>
+          {/* // Menu Box */}
+          <TouchableOpacity style={styles.box_menu_container}>
+            <Text style={styles.text_menu_style}>Deteksi Dini</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity style={styles.menu_style}>
-          <View style={styles.menu_img_container}></View>
-          <View style={styles.title_container}>
-            <Text style={styles.title_style}>Panduan Klaim INA-CBG</Text>
-          </View>
-        </TouchableOpacity>
+          {/* // Menu Box */}
+          <TouchableOpacity style={styles.box_menu_container}>
+            <Text style={styles.text_menu_style}>Faktor Risiko</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity style={styles.menu_style}>
-          <View style={styles.menu_img_container}></View>
-          <View style={styles.title_container}>
-            <Text style={styles.title_style}>Panduan Klaim INA-CBG</Text>
-          </View>
-        </TouchableOpacity>
+          {/* // Menu Box */}
+          <TouchableOpacity style={styles.box_menu_container}>
+            <Text style={styles.text_menu_style}>Cegah Stroke</Text>
+          </TouchableOpacity>
 
-        <TouchableOpacity style={styles.menu_style}>
-          <View style={styles.menu_img_container}></View>
-          <View style={styles.title_container}>
-            <Text style={styles.title_style}>Panduan Klaim INA-CBG</Text>
-          </View>
-        </TouchableOpacity>
+          {/* // Menu Box */}
+          <TouchableOpacity style={styles.box_menu_container}>
+            <Text style={styles.text_menu_style}>Diet Stroke</Text>
+          </TouchableOpacity>
+
+          {/* // Menu Box */}
+          <TouchableOpacity style={styles.box_menu_container}>
+            <Text style={styles.text_menu_style}>Ibadah Penderita Stroke</Text>
+          </TouchableOpacity>
+
+          {/* // Menu Box */}
+          <TouchableOpacity style={styles.box_menu_container}>
+            <Text style={styles.text_menu_style}>Aktivitas Harian</Text>
+          </TouchableOpacity>
+
+          {/* // Menu Box */}
+          <TouchableOpacity style={styles.box_menu_container}>
+            <Text style={styles.text_menu_style}>Darurat Stroke</Text>
+          </TouchableOpacity>
+        </View>
       </ScrollView>
     </View>
   );
@@ -108,7 +145,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f8f8f8',
+    backgroundColor: '#F1F4FF',
     paddingTop: 10,
   },
   text_container: {
@@ -122,36 +159,52 @@ const styles = StyleSheet.create({
   scroll_container: {
     // backgroundColor: 'grey',
     width: WIDTH,
-    paddingLeft: responsiveScreenWidth(5),
+    paddingHorizontal: responsiveScreenWidth(3),
     // height: responsiveScreenHeight(80),
+  },
+  menu_container: {
+    width: responsiveScreenWidth(93),
+    paddingVertical: 20,
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 
   menu_style: {
     backgroundColor: '#ffffff',
-    width: responsiveScreenWidth(90),
+    width: responsiveScreenWidth(94),
     height: 100,
-    // borderRadius: 100,
+    borderRadius: 10,
     // marginTop: 10,
     marginBottom: 12,
     flexDirection: 'row',
+
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 4},
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 1.5,
   },
-  menu_img_container: {
-    backgroundColor: '#615869',
-    width: responsiveScreenWidth(27),
-    height: '100%',
-    borderBottomLeftRadius: 12,
-    borderTopLeftRadius: 12,
-  },
-  title_container: {
-    width: responsiveScreenWidth(63),
+  box_menu_container: {
+    backgroundColor: COLORS.white,
+    width: responsiveScreenWidth(44),
+    height: 80,
+    borderRadius: 16,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#ffffff',
-    borderBottomRightRadius: 12,
-    borderTopRightRadius: 12,
+    marginBottom: responsiveScreenWidth(5),
+
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 4},
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 1.5,
   },
-  title_style: {
-    fontSize: 18,
-    fontWeight: 'bold',
+  text_menu_style: {
+    fontFamily: 'Inter-SemiBold',
+    fontSize: 14,
+    color: COLORS.black,
+    textAlign: 'center',
+    paddingHorizontal: 15,
   },
 });
